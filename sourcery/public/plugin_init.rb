@@ -1,0 +1,1 @@
+Plugins::add_record_page_action_erb(['resource', 'archival_object', 'digital_object', 'digital_object_component', 'accession'], 'shared/sourcery_page_action')

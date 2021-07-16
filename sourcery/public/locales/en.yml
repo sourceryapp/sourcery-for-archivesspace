@@ -1,0 +1,5 @@
+en:
+  plugin:
+    sourcery:
+      request_action: Sourcery
+      image: icon-256.png
