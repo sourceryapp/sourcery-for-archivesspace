@@ -1,5 +1,5 @@
 <link href="<%= "/assets/sourcery.css" %>" media="all" rel="stylesheet" type="text/css">
-<%= link_to "http://localhost:3002/archiveSpace/?archiveOrigin=True&organization_id="+t('sourcery.organization')+"&record_uri="+record.uri+"&record_cite="+record.cite+"&record_display_string="+record.display_string+"&record_resolved_repo="+record.resolved_repository['name'], target: :_blank do %>
+<%= link_to "http://localhost:3002/archiveSpace/?archiveOrigin=True&organization_id="+AppConfig[:orgId]+"&record_uri="+record.uri+"&record_cite="+record.cite+"&record_display_string="+record.display_string+"&record_resolved_repo="+record.resolved_repository['name'], target: :_blank do %>
   <button id="sourcery_button" class="btn btn-default page_action">
       <img src="<%= asset_path(t('plugin.sourcery.image')) %>" alt="Sourcery-Image", width="40", height="40"><br/><span><%= t('plugin.sourcery.request_action') %></span>
   </button>
