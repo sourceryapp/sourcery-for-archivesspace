@@ -12,14 +12,24 @@ Add 'sourcery' to the plugins variable.
 ```ruby
 AppConfig[:plugins] = ['sourcery']
 ```
-If applicable, set your organization id.
+If applicable, set your organization id.  Your Sourcery contact should be able to provide this.
 ```ruby
-AppConfig[:orgId] = 'your-org-id'
+AppConfig[:sourcery_org_id] = 'your-org-id'
 ```
 
 To remove the default request button, disable the request page action variable.
 ```ruby
 AppConfig[:pui_page_actions_request] = false
+```
+
+## Local Development/Testing
+
+In an effort to keep Sourcery development documentation in a single place, please reference the [Sourcery Web Repository Wiki](https://github.com/GreenhouseStudios/sourcery-web-app/wiki) for documentation on how to run this locally for development & contribution.
+
+To point the request button to a development URL, you can set :sourcery_endpoint in your config.
+
+```ruby
+AppConfig[:sourcery_endpoint] = 'https://devurl.web.app'
 ```
 
 ## Technical Overview
