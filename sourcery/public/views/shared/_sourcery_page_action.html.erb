@@ -1,11 +1,17 @@
 <% 
   endpoint = 'https://sourceryapp.org'
+  # endpoint = 'http://localhost:3000'
   if AppConfig.has_key?(:sourcery_endpoint)
     endpoint = AppConfig[:sourcery_endpoint]
   end
+
+  query_string = "repo_id=#{AppConfig[:sourcery_org_id]}"
+  query_string << "&title=#{record.display_string}"
+  query_string << "&message=#{record.cite}, #{request.url}"
 %>
-<%= link_to "#{endpoint}/archiveSpace/?archiveOrigin=True&organization_id=#{AppConfig[:sourcery_org_id]}&record_uri=#{record.uri}&record_cite=#{record.cite}&record_display_string=#{record.display_string}&record_resolved_repo=#{record.resolved_repository['name']}", target: :_blank do %>
+<%= link_to "#{endpoint}/request/create?#{query_string}", target: :_blank do %>
   <button id="sourcery_button" class="btn btn-default page_action">
       <img src="<%= asset_path(t('plugin.sourcery.image')) %>" alt="Sourcery Icon", width="40", height="40"><br/><span><%= t('plugin.sourcery.request_action') %></span>
   </button>
 <% end %>
+# 
