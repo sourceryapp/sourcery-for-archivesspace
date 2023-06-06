@@ -5,9 +5,8 @@
     endpoint = AppConfig[:sourcery_endpoint]
   end
 
-  if !AppConfig.has_key?(:sourcery_org_id)
-    sourcery_id = false
-  else
+  sourcery_id = false
+  if AppConfig.has_key?(:sourcery_org_id)
     sourcery_id = AppConfig[:sourcery_org_id]
   end
 
