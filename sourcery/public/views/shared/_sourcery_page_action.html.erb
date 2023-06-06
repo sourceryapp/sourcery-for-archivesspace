@@ -6,8 +6,8 @@
   end
 
   sourcery_id = false
-  if AppConfig.has_key?(:sourcery_org_id)
-    sourcery_id = AppConfig[:sourcery_org_id]
+  if AppConfig.has_key?(:sourcery_repo_id)
+    sourcery_id = AppConfig[:sourcery_repo_id]
   end
 
   query_string = sourcery_id ? "repo_id=#{sourcery_id}" : ""
