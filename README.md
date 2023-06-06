@@ -1,10 +1,10 @@
-# Sourcery Plugin for Archive Space
+# Sourcery Plugin for ArchivesSpace
 
-A plug-in for ArchiveSpace which replaces the default request workflow with Sourcery.
+A plug-in for ArchivesSpace which adds a page/resource action to request with Sourcery.
 
 ## Installation and Usage
 
-To install the plugin, add the directly titled `sourcery` at the root of this repository to the `plugins` directory of your ArchiveSpace environment.
+To install the plugin, add the directly titled `sourcery` at the root of this repository to the `plugins` directory of your ArchivesSpace environment.
 
 In `common/config/config.rb`: 
 
@@ -12,9 +12,10 @@ Add 'sourcery' to the plugins variable.
 ```ruby
 AppConfig[:plugins] = ['sourcery']
 ```
-If applicable, set your organization id.  Your Sourcery contact should be able to provide this.
+
+If applicable, set your repository ID.  This ID is a Sourcery ID that can help auto populate your repository in the request creation screen. Your Sourcery contact should be able to provide this.
 ```ruby
-AppConfig[:sourcery_org_id] = 'your-org-id'
+AppConfig[:sourcery_repo_id] = 'your-repository-id'
 ```
 
 To remove the default request button, disable the request page action variable.
@@ -27,16 +28,13 @@ AppConfig[:pui_page_actions_request] = false
 To point the request button to a development URL, you can set :sourcery_endpoint in your config.
 
 ```ruby
-AppConfig[:sourcery_endpoint] = 'https://devurl.web.app'
+AppConfig[:sourcery_endpoint] = 'https://sourcery-dev.web.app'
 ```
 
-## Technical Overview
+## Development Overview
 
-The following section briefly documents the key aspects of the workflow and implementation. For clarity, development to the main Sourcery app is included.
-
-### ArchiveSpace 
+The following section briefly documents the key aspects of the plugin. For clarity, development to the main Sourcery app is included.
 
 **public/plugin_init_rb**: Add's a Sourcery Button in the form of a page action to the following record types: `resource, archival_object, digital_object, digital_object_component`.
 
-**public/views/shared/_sourcery_page_action.html.erb**: Sourcery Button opens a link to sourceryapp.org/archivespace. The following record descriptors are passed as parameters through the url: organization id, record uri, citation, display string, and repository. 
-
+**public/views/shared/_sourcery_page_action.html.erb**: Sourcery button that creates a URL to Sourcery request creation to prepopulate fields.
