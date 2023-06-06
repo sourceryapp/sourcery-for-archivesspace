@@ -6,14 +6,14 @@ A plug-in for ArchivesSpace which adds a page/resource action to request with So
 
 To install the plugin, add the directly titled `sourcery` at the root of this repository to the `plugins` directory of your ArchivesSpace environment.
 
-In `common/config/config.rb`: 
+In your `config.rb` file: 
 
 Add 'sourcery' to the plugins variable.
 ```ruby
 AppConfig[:plugins] = ['sourcery']
 ```
 
-If applicable, set your repository ID.  This ID is a Sourcery ID that can help auto populate your repository in the request creation screen. Your Sourcery contact should be able to provide this.
+If applicable, set your repository ID.  This is a Sourcery ID that can help populate your repository in the request creation screen. Your Sourcery contact should be able to provide this.
 ```ruby
 AppConfig[:sourcery_repo_id] = 'your-repository-id'
 ```
