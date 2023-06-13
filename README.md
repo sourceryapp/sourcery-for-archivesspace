@@ -18,7 +18,7 @@ If applicable, set your repository ID.  This is a Sourcery ID that can help popu
 AppConfig[:sourcery_repo_id] = 'your-repository-id'
 ```
 
-To remove the default request button, disable the request page action variable.
+Completely optional, but if you wanted to remove the default request button, disable the request page action variable.
 ```ruby
 AppConfig[:pui_page_actions_request] = false
 ```
